@@ -24,6 +24,7 @@ buzzer = GPIO.PWM(BuzzerPin, 0.25)
 buzzer.start(1)
 print("PWM setup...")
 
+# This function uses distance to alter the frequency of our buzzer using PWM #
 def setfrequency(distmeasure):
     if distmeasure < 500 and distmeasure > 400:
         return 2
@@ -40,7 +41,8 @@ def setfrequency(distmeasure):
     else:
         return 0.25
  
-        
+
+ # This function converts our echo and trigger GPIO inputs to a distance #
 def distance():
     print("Measuring distance...")
     # set Trigger to HIGH
